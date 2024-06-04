@@ -1,168 +1,233 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-TW">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="renderer" content="webkit">
+
   
+  <title>虛擬實境 (VR) 介面設計對使用者沈浸感影響的研究 | Arthur&#39;s blog</title>
+
+  <link rel="shortcut icon" href="/hexo/images/favicon.png">
   
-  <title>虛擬實境 (VR) 介面設計對使用者沈浸感影響的研究 | Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="在當今數位科技的快速發展下，虛擬實境（VR）技術日益受到關注。VR技術為使用者提供了身臨其境的體驗，並在多個領域中得到應用，如遊戲、教育、醫療等。然而，要實現真正的沈浸感需要考慮多個因素，其中介面設計是至關重要的一環。本研究旨在探討不同介面設計對使用者在虛擬環境中的沈浸感的影響，以期為優化VR技術的使用者體驗提供參考。 大眾看法虛擬實境技術近年來受到越來越多人的關注和接受。人們對VR技術的潛力持樂">
 <meta property="og:type" content="article">
 <meta property="og:title" content="虛擬實境 (VR) 介面設計對使用者沈浸感影響的研究">
 <meta property="og:url" content="https://dubakimo.github.io/hexo/posts/vr-ui-design-research/">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="Arthur&#39;s blog">
 <meta property="og:description" content="在當今數位科技的快速發展下，虛擬實境（VR）技術日益受到關注。VR技術為使用者提供了身臨其境的體驗，並在多個領域中得到應用，如遊戲、教育、醫療等。然而，要實現真正的沈浸感需要考慮多個因素，其中介面設計是至關重要的一環。本研究旨在探討不同介面設計對使用者在虛擬環境中的沈浸感的影響，以期為優化VR技術的使用者體驗提供參考。 大眾看法虛擬實境技術近年來受到越來越多人的關注和接受。人們對VR技術的潛力持樂">
-<meta property="og:locale" content="en_US">
+<meta property="og:locale" content="zh_TW">
 <meta property="og:image" content="https://dubakimo.github.io/hexo/images/vision-pro.png">
 <meta property="og:image" content="https://dubakimo.github.io/hexo/images/oculus-rift.png">
 <meta property="og:image" content="https://dubakimo.github.io/hexo/images/htc-vive.png">
 <meta property="og:image" content="https://dubakimo.github.io/hexo/images/playstation-vr.png">
 <meta property="article:published_time" content="2023-09-19T16:00:00.000Z">
 <meta property="article:modified_time" content="2024-06-03T08:57:13.830Z">
-<meta property="article:author" content="John Doe">
+<meta property="article:author" content="Arthur tu">
 <meta property="article:tag" content="數位產品設計">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://dubakimo.github.io/hexo/images/vision-pro.png">
+
+  <meta name="keywords" content=",數位產品設計">
+  <meta name="format-detection" content="telephone=no,email=no">
+  <meta name="theme-color" content="#9C27B0">
+
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Arthur&#39;s blog">
+  <meta name="msapplication-starturl" content="https://dubakimo.github.io/hexo/hexo/posts/vr-ui-design-research/">
+  <meta name="msapplication-navbutton-color" content="#9C27B0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Arthur&#39;s blog">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="apple-touch-icon" href="/hexo/images/favicon.png">
+
+  
+    <link rel="canonical" href="https://dubakimo.github.io/hexo/hexo/posts/vr-ui-design-research/">
+  
+
   
   
-    <link rel="shortcut icon" href="/hexo/hexo/images/logo.png">
+
   
   
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Tourney&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-  />
   
-<link rel="stylesheet" href="/hexo/css/all.min.css">
+
+  
+<link rel="stylesheet" href="/hexo/css/mdui.css">
+<link rel="stylesheet" href="/hexo/css/style.css">
+
+  
+<link rel="stylesheet" href="/hexo/custom.css">
 
 <meta name="generator" content="Hexo 7.2.0"></head>
 
-<body>
-  <header
-    class="py-md-4 border-bottom border-primary-200"
-    style="margin-bottom: 1px;"
-  >
-  <nav class="navbar navbar-expand-md py-md-1">
-    <div class="container">
-      <a class="navbar-brand py-0" href="/hexo/">
-        <img src="/hexo/images/logo.png" alt="logo">
-      </a>
-      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="material-symbols-outlined fs-1 text-primary-900">menu</span>
-      </button>
-      <div class="collapse navbar-collapse offset-md-2 offset-lg-3" id="navbarToggler">
-        <ul class="navbar-nav me-auto mb-2 mb-md-0 text-center">
-          
-          
-            <li class="nav-item mb-4 mb-md-0 me-md-3 me-lg-7">
-              <a
-                class="nav-link "
-                href="/hexo/"
-              >
-                <span class="position-relative px-2 py-1">首頁</span>
-              </a>
-            </li>
-          
-            <li class="nav-item mb-4 mb-md-0 me-md-3 me-lg-7">
-              <a
-                class="nav-link "
-                href="/hexo/collection"
-              >
-                <span class="position-relative px-2 py-1">作品集</span>
-              </a>
-            </li>
-          
-            <li class="nav-item mb-4 mb-md-0 me-md-3 me-lg-7">
-              <a
-                class="nav-link "
-                href="/hexo/service"
-              >
-                <span class="position-relative px-2 py-1">服務項目</span>
-              </a>
-            </li>
-          
-            <li class="nav-item mb-4 mb-md-0 me-md-3 me-lg-7">
-              <a
-                class="nav-link "
-                href="/hexo/blog"
-              >
-                <span class="position-relative px-2 py-1">部落格</span>
-              </a>
-            </li>
-          
-            <li class="nav-item ">
-              <a
-                class="nav-link "
-                href="/hexo/contact"
-              >
-                <span class="position-relative px-2 py-1">聯絡我</span>
-              </a>
-            </li>
-          
-        </ul>
+<body class="mdui-appbar-with-toolbar mdui-theme-primary-indigo mdui-theme-accent-pink">
+  <script>var a=localStorage.getItem("mdui-theme-layout-dark");if(a){document.getElementsByTagName("body")[0].className+=" mdui-theme-layout-dark"};</script>
+  <script>if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches){document.getElementsByTagName("body")[0].className+=" mdui-theme-layout-dark"};</script>
+  <script>var a=localStorage.getItem("mdui-drawer-close");if(!a){document.getElementsByTagName("body")[0].className+=" mdui-drawer-body-left"};</script>
+  <header id="header" class="mdui-appbar mdui-appbar-fixed mdui-appbar-scroll-hide mdui-appbar-inset">
+  <div class="mdui-toolbar mdui-color-theme">
+    <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="mdui-icon material-icons">menu</i></a>
+    <a href="/hexo/" class="mdui-typo-headline">Arthur&#39;s blog</a>
+    <div class="mdui-toolbar-spacer"></div>
+    <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: '搜索'}"><i class="mdui-icon material-icons">search</i></a>
+    
+  </div>
+</header>
+<div class="mdui-dialog" id="search">
+  
+    <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="請輸入關鍵字"><input type="hidden" name="sitesearch" value="https://dubakimo.github.io/hexo"></form>
+    <div class="search-result"></div>
+  
+</div>
+
+  <aside id="sidebar" class="mdui-drawer mdui-drawer-full-height">
+  <script>var a=localStorage.getItem("mdui-drawer-close");if(a){document.getElementById("sidebar").className+=" mdui-drawer-close"};</script>
+  <div class="mdui-grid-tile">
+    <img src="/hexo/images/banner.png" style="height: 160px;">
+    <img src="/hexo/images/tiger.png" class="avatar-animation" style="position: absolute; top: 10%; left: 24px; width: 64px; height: 64px; border: 2px solid #fff; border-radius: 50%;">
+    <div class="mdui-grid-tile-actions">
+      <div class="mdui-grid-tile-text">
+        <div class="mdui-grid-tile-title">Arthur tu</div>
+        <div class="mdui-grid-tile-subtitle"><i class="mdui-icon material-icons">art_track</i></div>
+      </div>
+      
+    </div>
+  </div>
+
+  <div class="mdui-list" mdui-collapse="{accordion: true}">
+    <a href="/hexo/" class="mdui-list-item mdui-ripple">
+      <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-blue">home</i>
+      <div class="mdui-list-item-content">首頁</div>
+    </a>
+    <div class="mdui-collapse-item">
+      <script>var a=localStorage.getItem("mdui-collapse-item-0");if(a){document.getElementsByClassName("mdui-collapse-item")[0].className+=" mdui-collapse-item-open"};</script>
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-deep-orange">archive</i>
+        <div class="mdui-list-item-content">部落格</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        <a class="mdui-ripple sidebar_archives-link" href="/hexo/archives/2024/02/">二月 2024<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/hexo/archives/2023/11/">十一月 2023<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/hexo/archives/2023/10/">十月 2023<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/hexo/archives/2023/09/">九月 2023<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/hexo/archives/2023/08/">八月 2023<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/hexo/archives/2023/07/">七月 2023<span class="mdui-ripple sidebar_archives-count">1</span></a>
+        
       </div>
     </div>
-  </nav>
-</header>
-
-
-  <main>
-  <section class="container pb-7 pt-lg-9 pb-lg-7 mt-lg-9">
-    <div class="row flex-lg-row-reverse justify-content-lg-between pb-md-7">
-      <div class="col-12 col-lg-3">
-        <aside class="blog__menu px-3 py-4 p-lg-7 bg-primary-100">
-  <ul class="d-flex flex-lg-column justify-content-md-center justify-content-lg-start gap-7 mb-0 p-xxl-7 list-unstyled">
-    <li class="flex-shrink-0">
-      
-      <a href="/hexo/blog" class=" pb-1 fs-5 text-primary-600 link-primary-500 bg-transparent text-decoration-none" type="button">全部文章</a>
-    </li>
-    
-      
-      <li class="flex-shrink-0">
-        <a href="/hexo/tags/UI-UX-%E6%96%B0%E7%9F%A5/" class=" pb-1 fs-5 text-primary-600 link-primary-500 bg-transparent text-decoration-none">
-          UI/UX 新知
-        </a>
-      </li>
-    
-      
-      <li class="flex-shrink-0">
-        <a href="/hexo/tags/%E6%95%B8%E4%BD%8D%E7%94%A2%E5%93%81%E8%A8%AD%E8%A8%88/" class=" pb-1 fs-5 text-primary-600 link-primary-500 bg-transparent text-decoration-none">
-          數位產品設計
-        </a>
-      </li>
-    
-      
-      <li class="flex-shrink-0">
-        <a href="/hexo/tags/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/" class=" pb-1 fs-5 text-primary-600 link-primary-500 bg-transparent text-decoration-none">
-          前端開發
-        </a>
-      </li>
-    
-  </ul>
-</aside>
+    <div class="mdui-collapse-item">
+      <script>var a=localStorage.getItem("mdui-collapse-item-1");if(a){document.getElementsByClassName("mdui-collapse-item")[1].className+=" mdui-collapse-item-open"};</script>
+      <!-- <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-green">class</i>
+        <div class="mdui-list-item-content">分類</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div> -->
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        
+        
+          <a href="javascript:;" class="mdui-list-item mdui-p-l-2 mdui-text-color-theme mdui-ripple" style="justify-content: center;">分類為空</a>
+        
       </div>
-      <article class="article-container col-12 col-lg-8 mt-9 mt-lg-0 mb-0 pt-9 pt-lg-0 text-primary-700" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-        <nav class="mb-3 mb-lg-7" aria-label="breadcrumb">
-          <ol class="breadcrumb">
-            
-              <li class="breadcrumb-item text-primary-500">
-                <a class="text-primary-500 text-decoration-none" href="/hexo/tags/%E6%95%B8%E4%BD%8D%E7%94%A2%E5%93%81%E8%A8%AD%E8%A8%88/" rel="tag">數位產品設計</a>
+    </div>
+    <div class="mdui-collapse-item">
+      <script>var a=localStorage.getItem("mdui-collapse-item-2");if(a){document.getElementsByClassName("mdui-collapse-item")[2].className+=" mdui-collapse-item-open"};</script>
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-brown">bookmark</i>
+        <div class="mdui-list-item-content">標籤</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+        <a class="mdui-ripple sidebar_archives-link" href="/hexo/tags/UI-UX-%E6%96%B0%E7%9F%A5/" rel="tag">UI/UX 新知<span class="mdui-ripple sidebar_archives-count">3</span></a><a class="mdui-ripple sidebar_archives-link" href="/hexo/tags/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/" rel="tag">前端開發<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/hexo/tags/%E6%95%B8%E4%BD%8D%E7%94%A2%E5%93%81%E8%A8%AD%E8%A8%88/" rel="tag">數位產品設計<span class="mdui-ripple sidebar_archives-count">2</span></a>
+        
+      </div>
+    </div>
+    <a href="/hexo/about" class="mdui-list-item mdui-ripple">
+      <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-purple">person</i>
+      <div class="mdui-list-item-content">關於</div>
+    </a>
+  </div>
 
-              </li>
+  <div class="mdui-divider"></div>
+
+  <div class="mdui-list" mdui-collapse="{accordion: true}">
+    
+    <div class="mdui-collapse-item">
+      <script>var a=localStorage.getItem("mdui-collapse-item-3");if(a){document.getElementsByClassName("mdui-collapse-item")[3].className+=" mdui-collapse-item-open"};</script>
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <div class="mdui-list-item-content">友情鏈接</div>
+        <i class="mdui-list-item-icon mdui-icon material-icons">link</i>
+      </div>
+      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+          <a href="https://dubakimo.shopstore.tw/category" target="_blank" class="mdui-list-item mdui-p-l-2 mdui-text-color-theme-accent mdui-ripple" style="justify-content: center;">小米精選賣場</a>
+        
+        
+      </div>
+    </div>
+  </div>
+</aside>
+
+  <main id="main" class="mdui-m-t-5 fadeIn animated">
+  
+<link rel="stylesheet" href="//cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+
+  <style>#main article .mdui-card-content .center-block{display:block!important;margin-right:auto!important;margin-left:auto!important}</style>
+  <style>#main article .mdui-card-content .text-center{text-align:center!important}</style>
+  <article class="mdui-card mdui-m-b-5">
+    <header class="mdui-card-media">
+      <img src="/hexo/images/random/material-13.png" style="max-height: 240px;">
+      <div class="mdui-card-media-covered">
+        <div class="mdui-card-primary">
+          <div class="mdui-card-primary-title">虛擬實境 (VR) 介面設計對使用者沈浸感影響的研究</div>
+          <div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2023-09-20 / <i class="iconfont">&#xe601;</i> Noel</div>
+        </div>
+      </div>
+      <div class="mdui-card-menu">
+        
+          <button class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#qrcode', align: 'right'}"><i class="mdui-icon material-icons">devices</i></button>
+          <ul class="mdui-menu" id="qrcode">
             
-            <li class="breadcrumb-item text-primary-500 active" aria-current="page">2023/09/20 發佈</li>
-          </ol>
-        </nav>
-        <h1 class="mb-3 mb-lg-4 fs-2 text-center">虛擬實境 (VR) 介面設計對使用者沈浸感影響的研究</h1>
+              <li class="mdui-menu-item"><a class="mdui-text-center mdui-ripple">發送到手機</a></li>
+            
+            <li class="mdui-menu-item" disabled>
+              
+                <img src="//chart.googleapis.com/chart?cht=qr&chs=246x246&chl=https://dubakimo.github.io/hexo/posts/vr-ui-design-research/&chld=M|2">
+              
+            </li>
+          </ul>
         
-          <h4 class="mb-4 mb-lg-9 text-center fw-normal">- 探索虛擬實境技術的現狀與前景 -</h4>
         
-        <p>在當今數位科技的快速發展下，虛擬實境（VR）技術日益受到關注。VR技術為使用者提供了身臨其境的體驗，並在多個領域中得到應用，如遊戲、教育、醫療等。然而，要實現真正的沈浸感需要考慮多個因素，其中介面設計是至關重要的一環。本研究旨在探討不同介面設計對使用者在虛擬環境中的沈浸感的影響，以期為優化VR技術的使用者體驗提供參考。</p>
+          <button class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="mdui-icon material-icons">share</i></button>
+          <ul class="mdui-menu" id="share_menu">
+            <li class="mdui-menu-item">
+              <a href="https://service.weibo.com/share/share.php?appkey=&title=虛擬實境 (VR) 介面設計對使用者沈浸感影響的研究&url=https://dubakimo.github.io/hexo/posts/vr-ui-design-research/&pic=https://dubakimo.github.io/hexo/hexo/images/favicon.png&searchPic=false&style=simple" target="_blank" class="mdui-ripple">分享到 Weibo</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://twitter.com/intent/tweet?text=虛擬實境 (VR) 介面設計對使用者沈浸感影響的研究&url=https://dubakimo.github.io/hexo/posts/vr-ui-design-research/&via=Arthur tu" target="_blank" class="mdui-ripple">分享到 Twitter</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://www.facebook.com/sharer/sharer.php?u=https://dubakimo.github.io/hexo/posts/vr-ui-design-research/" target="_blank" class="mdui-ripple">分享到 Facebook</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://plus.google.com/share?url=https://dubakimo.github.io/hexo/posts/vr-ui-design-research/" target="_blank" class="mdui-ripple">分享到 Google+</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://dubakimo.github.io/hexo/posts/vr-ui-design-research/&title=虛擬實境 (VR) 介面設計對使用者沈浸感影響的研究" target="_blank" class="mdui-ripple">分享到 LinkedIn</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://connect.qq.com/widget/shareqq/index.html?site=Arthur&#39;s blog&title=虛擬實境 (VR) 介面設計對使用者沈浸感影響的研究&pics=https://dubakimo.github.io/hexo/hexo/images/favicon.png&url=https://dubakimo.github.io/hexo/posts/vr-ui-design-research/" target="_blank" class="mdui-ripple">分享到 QQ</a>
+            </li>
+            <li class="mdui-menu-item">
+              <a href="https://telegram.me/share/url?url=https://dubakimo.github.io/hexo/posts/vr-ui-design-research/&text=虛擬實境 (VR) 介面設計對使用者沈浸感影響的研究" target="_blank" class="mdui-ripple">分享到 Telegram</a>
+            </li>
+          </ul>
+        
+      </div>
+    </header>
+    <div class="mdui-card-content mdui-typo">
+      <p>在當今數位科技的快速發展下，虛擬實境（VR）技術日益受到關注。VR技術為使用者提供了身臨其境的體驗，並在多個領域中得到應用，如遊戲、教育、醫療等。然而，要實現真正的沈浸感需要考慮多個因素，其中介面設計是至關重要的一環。本研究旨在探討不同介面設計對使用者在虛擬環境中的沈浸感的影響，以期為優化VR技術的使用者體驗提供參考。</p>
 <h2 id="大眾看法"><a href="#大眾看法" class="headerlink" title="大眾看法"></a>大眾看法</h2><p>虛擬實境技術近年來受到越來越多人的關注和接受。人們對VR技術的潛力持樂觀態度，認為它能夠提供全新的體驗和娛樂方式，並在教育、訓練等領域中有著廣泛的應用前景。然而，也有一些人擔心虛擬實境技術的成熟度和可靠性，對其潛在風險抱有顧慮。</p>
 <h2 id="現行產品"><a href="#現行產品" class="headerlink" title="現行產品"></a>現行產品</h2><p>目前市面上有許多虛擬實境產品，如Vision Pro、Oculus Rift、HTC Vive、PlayStation VR等。這些產品在硬件性能、軟件支持和使用者體驗等方面存在差異，而介面設計是影響使用者體驗的重要因素之一。不同的介面設計可以影響使用者的操作方式、感知真實度以及沈浸感。</p>
 <div class="row row-gap-4 mb-6 mb-lg-7">
@@ -197,85 +262,78 @@
 <h2 id="技術瓶頸"><a href="#技術瓶頸" class="headerlink" title="技術瓶頸"></a>技術瓶頸</h2><p>儘管虛擬實境技術取得了巨大進步，但仍然存在一些技術瓶頸需要克服。例如，許多使用者報告在使用VR設備時出現眩暈和不適感，這與感知延遲和畫面模糊等問題有關。此外，虛擬實境的內容和應用也需要更多的創新和豐富，以滿足不同使用者的需求。</p>
 <h2 id="未來展望"><a href="#未來展望" class="headerlink" title="未來展望"></a>未來展望</h2><p>未來，虛擬實境技術將繼續向前發展。我們可以期待更加先進的硬件設備和更加豐富多彩的虛擬內容。同時，介面設計也將繼續演進，以提供更加直觀和便捷的操作方式，進一步增強使用者的沈浸感和參與感。總的來說，虛擬實境技術的未來是充滿希望和潛力的，我們期待著看到它在各個領域中的廣泛應用和發展。</p>
 
-
-        
-          <span>Noel 主筆</span>
-        
-      </article>
-    </div>
-  </section>
-
-  <!-- <section class="container px-6 px-lg-0 pt-7 pb-7 pb-lg-9 mt-lg-7 mb-7 mb-lg-9 border-top border-primary-400">
-    <h3 class="mb-7 text-center text-lg-start text-primary-700">相關文章</h3>
-    <div class="row row-gap-5">
       
+      <blockquote>
         
-          
-            <div class="col-12 col-md-6 col-lg-4">
-              <div class="card border-0">
-                <img src="/hexo/hexo/images/article-image5.png" class="img-fluid card-img-top rounded-3">
-                <div class="card-body">
-                  <h5 class="card-title mb-3 text-primary-700">想打到目標受眾？先讓設計師跟你都瞭解他們痛在哪！</h5>
-                  <div class="d-flex justify-content-between align-items-center">
-                    
-                      <span class="badge fs-6 lh-base fw-normal text-primary-700 bg-primary-200 rounded-4">數位產品設計</span>
-                    
-                    <p class="card-text fs-6 text-primary-600"><small class="text-body-secondary">2023/08/10</small></p>
-                  </div>
-                  <a class="stretched-link" href="/hexo/posts/hit-ta-know-killer-points/"></a>
-                </div>
-              </div>
-            </div>
-          
-        
-      
+        <strong>本文鏈接：</strong><br><a href="https://dubakimo.github.io/hexo/posts/vr-ui-design-research/">https://dubakimo.github.io/hexo/posts/vr-ui-design-research/</a>
+      </blockquote>
     </div>
+    <footer class="mdui-card-actions">
+      
+      
+        <a class="mdui-ripple article_tags-link" href="/hexo/tags/%E6%95%B8%E4%BD%8D%E7%94%A2%E5%93%81%E8%A8%AD%E8%A8%88/" rel="tag">數位產品設計</a>
+      
+    </footer>
+    
+  </article>
+  
+<script src="//cdn.bootcdn.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="//cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
 
-  </section> -->
+  <script>$("#main article .mdui-card-content img.fancybox").on("click",function(e){$.fancybox.open({src:$(this).attr("src")});});</script>
+
+
+  <nav id="paginator">
+    
+      <a rel="prev" class="extend prev" href="/hexo/posts/figma-dev-mode-part-one/">
+        <button aria-label="prev" class="mdui-btn mdui-btn-raised mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_back</i></button>
+        <span class="mdui-p-x-3" mdui-tooltip="{content: '給設計師和工程師的 Figma-Dev Mode 開發模式使用指南 (上)'}">上一篇</span>
+      </a>
+    
+    <div class="spacer"></div>
+    
+      <a rel="next" class="extend next" href="/hexo/posts/hit-ta-know-killer-points/">
+        <span class="mdui-p-x-3" mdui-tooltip="{content: '想打到目標受眾？先讓設計師跟你都瞭解他們痛在哪！'}">下一篇</span>
+        <button aria-label="next" class="mdui-btn mdui-btn-raised mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_forward</i></button>
+      </a>
+    
+  </nav>
+
+
+
+
+
 </main>
-
-  <footer
-    class="py-7"
-    style="background-image: url('images/footer-bg-lg.png');
-      background-repeat: no-repeat;
-      background-size: cover;"
-  >
-  <div class="container">
-    <div class="row row-gap-7 justify-content-between align-items-center my-md-7">
-      <div class="col-12 col-md-4 col-lg-3">
-        <img
-          class="mb-4"
-          style="width: 120px;"
-          src="/hexo/images/logo.png" alt="logo"
-        >
-        <p class="mb-4 fs-5 text-primary-700">歡迎填寫表單，或直接與我聯絡！</p>
-        <a
-          class="link-primary-500 fs-5 text-decoration-none" href="mailto:amofarthur@gmail.com">amofarthur@gmail.com</a>
-      </div>
-      <div class="col-12 col-md-6 col-lg-4 col-xxl-3">
-        <a class="btn btn-lg icon-link link-primary-500 w-100 px-4 mb-4 lh-base text-start fw-bold text-primary-50 bg-primary-900" href="#">
-          <svg class="bi display-4" width="56" height="56" viewBox="0 0 56 56" fill="currentcolor" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M16 13H39V43H16L16 13ZM13 13C13 11.3431 14.3431 10 16 10H39C40.6569 10 42 11.3431 42 13V43C42 44.6569 40.6569 46 39 46H16C14.3431 46 13 44.6569 13 43V13ZM22 20C22 20.8284 21.3284 21.5 20.5 21.5C19.6716 21.5 19 20.8284 19 20C19 19.1716 19.6716 18.5 20.5 18.5C21.3284 18.5 22 19.1716 22 20ZM22 27C22 27.8284 21.3284 28.5 20.5 28.5C19.6716 28.5 19 27.8284 19 27C19 26.1716 19.6716 25.5 20.5 25.5C21.3284 25.5 22 26.1716 22 27ZM20.5 35.5C21.3284 35.5 22 34.8284 22 34C22 33.1716 21.3284 32.5 20.5 32.5C19.6716 32.5 19 33.1716 19 34C19 34.8284 19.6716 35.5 20.5 35.5ZM24 20C24 19.1716 24.6716 18.5 25.5 18.5H33.5C34.3284 18.5 35 19.1716 35 20C35 20.8284 34.3284 21.5 33.5 21.5H25.5C24.6716 21.5 24 20.8284 24 20ZM25.5 25.5C24.6716 25.5 24 26.1716 24 27C24 27.8284 24.6716 28.5 25.5 28.5H33.5C34.3284 28.5 35 27.8284 35 27C35 26.1716 34.3284 25.5 33.5 25.5H25.5ZM24 34C24 33.1716 24.6716 32.5 25.5 32.5H33.5C34.3284 32.5 35 33.1716 35 34C35 34.8284 34.3284 35.5 33.5 35.5H25.5C24.6716 35.5 24 34.8284 24 34Z" fill="currentcolor"/>
-          </svg>
-          填寫表單
-        </a>
-        <a class="btn btn-lg w-100 px-4 mb-4 lh-base text-start link-primary-500 text-primary-700 bg-primary-50" href="#">
-          <i class="bi bi-instagram align-middle px-2 fs-1"></i>
-          hexschool_demo
-        </a>
-        <a class="btn btn-lg w-100 px-4 lh-base text-start link-primary-500 text-primary-700 bg-primary-50" href="#">
-          <i class="bi bi-facebook align-middle px-2 fs-1"></i>
-          hexschoolTW
-        </a>
-      </div>
-    </div>
+  <footer id="footer" class="mdui-m-t-5 mdui-p-y-3 mdui-color-theme">
+  <div class="mdui-p-y-0 mdui-text-center">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </div>
+  <div class="mdui-p-y-1 mdui-text-center">
+    Copyright &copy; 2024 Arthur tu<br>
+    Powered by <a href="https://hexo.io/" target="_blank" class="mdui-text-color-theme-accent">Hexo</a>
+    
   </div>
 </footer>
+
+  <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_upward</i></button>
   
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   
-<script src="/hexo/js/swiper.js"></script>
+<script src="/hexo/js/mdui.js"></script>
+<script src="/hexo/js/script.js"></script>
+
+  
+<script src="/hexo/custom.js"></script>
 
 </body>
 </html>
